@@ -1,0 +1,25 @@
+# Repository metadata and local configuration
+.git
+.gitignore
+.env*
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+*.keystore
+*credentials*
+*secret*
+
+# Maven output and local tooling
+target
+**/target
+*.log
+.DS_Store
+.idea
+.vscode
+
+# Tests are not needed by the production image
+src/test

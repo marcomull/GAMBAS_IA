@@ -1,0 +1,43 @@
+{
+  "id": "perfil-finanzas-sanas",
+  "nombre": "Roberto",
+  "titulo": "Finanzas Sanas",
+  "historia": "Roberto gana 30,000, tiene sus deudas muy controladas y ahorra constantemente. Busca optimizar su salud financiera.",
+  "ingreso_mensual": 30000,
+  "nivel_endeudamiento": 20,
+  "frecuencia_ahorro": "Alta",
+  "transacciones": [
+    {
+      "descripcion": "Pago de renta y mantenimiento",
+      "monto": 1800
+    },
+    {
+      "descripcion": "Despensa y supermercado",
+      "monto": 1400
+    },
+    {
+      "descripcion": "Gasolina auto",
+      "monto": 800
+    },
+    {
+      "descripcion": "Servicio luz y agua",
+      "monto": 600
+    },
+    {
+      "descripcion": "Farmacia y seguro médico",
+      "monto": 500
+    },
+    {
+      "descripcion": "Colegiatura y libros",
+      "monto": 400
+    },
+    {
+      "descripcion": "Cine y entretenimiento",
+      "monto": 300
+    },
+    {
+      "descripcion": "Gastos varios y misceláneos",
+      "monto": 200
+    }
+  ]
+}

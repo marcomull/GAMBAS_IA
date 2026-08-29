@@ -1,0 +1,30 @@
+# Repository metadata and local configuration
+.git
+.gitignore
+.env*
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+*.keystore
+*credentials*
+*secret*
+
+# Local environments, caches, notebooks, and training data
+.venv
+venv
+env
+__pycache__
+*.py[cod]
+.ipynb_checkpoints
+*.ipynb
+.pytest_cache
+.mypy_cache
+data/raw
+data/processed
+notebooks
+*.log
+.DS_Store

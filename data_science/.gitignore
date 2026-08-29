@@ -1,0 +1,19 @@
+# Entornos Virtuales
+.venv/
+venv/
+env/
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# archivos temporales
+temp*
+temp/
+
+# Por si alguien una Mac
+.DS_Store

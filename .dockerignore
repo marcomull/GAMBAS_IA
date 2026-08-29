@@ -1,0 +1,42 @@
+# Repository and local tooling
+.git
+.gitignore
+.github
+.vscode
+.idea
+.DS_Store
+
+# Environment files and credentials
+**/.env*
+!**/.env.example
+**/*.pem
+**/*.key
+**/*.crt
+**/*.cer
+**/*.p12
+**/*.pfx
+**/*.jks
+**/*.keystore
+**/*credentials*
+**/*secret*
+
+# Dependencies, caches, and build output
+**/node_modules
+**/.next
+**/coverage
+**/__pycache__
+**/*.py[cod]
+**/.pytest_cache
+**/.mypy_cache
+**/.venv
+**/venv
+**/env
+**/target
+**/build
+**/dist
+**/*.log
+
+# Local notebooks and datasets are not needed in application images
+**/*.ipynb
+**/data/raw
+**/data/processed

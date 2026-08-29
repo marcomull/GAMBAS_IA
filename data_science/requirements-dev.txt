@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# Dependencias solo para correr las pruebas (data_science/tests/), no se instalan en produccion
+pytest==9.1.1
+httpx==0.28.1

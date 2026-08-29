@@ -1,0 +1,31 @@
+{
+  "id": "perfil-en-riesgo",
+  "nombre": "Carlos",
+  "titulo": "En Riesgo",
+  "historia": "Este es Carlos. Gana 10,000, pero casi todo se le va en pagar tarjetas y comida rápida. No tiene cultura de ahorro.",
+  "ingreso_mensual": 10000,
+  "nivel_endeudamiento": 75,
+  "frecuencia_ahorro": "Baja",
+  "transacciones": [
+    {
+      "descripcion": "Pago de renta departamento",
+      "monto": 3000
+    },
+    {
+      "descripcion": "Supermercado y comida rápida",
+      "monto": 2000
+    },
+    {
+      "descripcion": "Videojuegos y streaming",
+      "monto": 1200
+    },
+    {
+      "descripcion": "Gasolina y Uber",
+      "monto": 800
+    },
+    {
+      "descripcion": "Recibo de luz y wifi",
+      "monto": 500
+    }
+  ]
+}

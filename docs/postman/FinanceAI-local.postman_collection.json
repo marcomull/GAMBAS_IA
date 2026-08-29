@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "FinanceAI - Python API local (model-free)",
+    "description": "Prueba aislada de red para FastAPI. No requiere modelos entrenados ni base de datos.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health - API disponible sin modelos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', function () { pm.response.to.have.status(200); });",
+              "const body = pm.response.json();",
+              "pm.test('API en modo model-free', function () { pm.expect(body.mode).to.eql('model-free'); });",
+              "pm.test('No requiere modelos', function () { pm.expect(body.models_loaded).to.eql(false); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Predict internal - contrato de red aislado",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usuarioId\": \"USR-POSTMAN-001\",\n  \"transacciones\": [\n    {\n      \"idTransaccion\": \"TX-001\",\n      \"descripcion\": \"Pago de renta\",\n      \"monto\": 8500.0,\n      \"fecha\": \"2026-07-15\"\n    }\n  ],\n  \"ingresoMensual\": 25000.0,\n  \"nivelEndeudamiento\": \"medio\",\n  \"frecuenciaAhorro\": \"Media\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/predict-internal",
+          "host": ["{{baseUrl}}"],
+          "path": ["predict-internal"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('HTTP 200', function () { pm.response.to.have.status(200); });",
+              "const body = pm.response.json();",
+              "pm.test('Solicitud recibida', function () { pm.expect(body.status).to.eql('ok'); });",
+              "pm.test('Modo independiente de modelos', function () { pm.expect(body.models_loaded).to.eql(false); });",
+              "pm.test('Payload recibido íntegramente', function () { pm.expect(body.received.usuarioId).to.eql('USR-POSTMAN-001'); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

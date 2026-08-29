@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Nuevos colores semánticos globales */
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-card: var(--brand-card);
+  --color-brand-text: var(--brand-text);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-hover: var(--brand-accent-hover);
+  --color-brand-border: var(--brand-border);
+}
+
+:root {
+  /* Tema Claro (Light Mode) */
+  --brand-bg: #EAE2B7;
+  --brand-card: #F4F1DE;
+  --brand-text: #003049;
+  --brand-muted: rgba(0, 48, 73, 0.8);
+  --brand-accent: #D62828;
+  --brand-accent-hover: #003049;
+  --brand-border: rgba(0, 48, 73, 0.2);
+  --brand-banner-bg: #003049;
+  --brand-banner-text: #EAE2B7;
+}
+
+.dark {
+  /* Tema Oscuro (Dark Mode) - El favorito actual */
+  --brand-bg: #003049; 
+  --brand-card: #002538;
+  --brand-text: #EAE2B7;
+  --brand-muted: rgba(234, 226, 183, 0.7);
+  --brand-accent: #F77F00;
+  --brand-accent-hover: #FCBF49;
+  --brand-border: rgba(247, 127, 0, 0.3);
+  --brand-banner-bg: #001f30;
+  --brand-banner-text: #FCBF49;
+}
+
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .glass-card {
+    background-color: var(--brand-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--brand-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Custom Scrollbar (Webkit: Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-border);
+  border-radius: 10px;
+  border: 2px solid var(--brand-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-accent);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--brand-bg);
+}
+
+/* Custom Scrollbar (Firefox) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-border) transparent;
+}
